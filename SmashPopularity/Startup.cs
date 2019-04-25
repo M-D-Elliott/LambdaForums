@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SmashPopularity.Services;
 using SmashPopularity.Data;
 using SmashPopularity.Data.Models;
+using SmashPopularity.Service;
 
 namespace SmashPopularity
 {
@@ -31,6 +32,7 @@ namespace SmashPopularity
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<IForum, ForumService>();
 
             services.AddMvc();
         }

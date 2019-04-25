@@ -1,7 +1,9 @@
-﻿using SmashPopularity.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SmashPopularity.Data;
 using SmashPopularity.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SmashPopularity.Service
@@ -26,7 +28,8 @@ namespace SmashPopularity.Service
 
         public IEnumerable<Forum> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Forums
+                .Include(f => f.Posts);
         }
 
         public IEnumerable<ApplicationUser> GetAllActiveUsers()
@@ -36,7 +39,12 @@ namespace SmashPopularity.Service
 
         public Forum GetById(int id)
         {
-            throw new NotImplementedException();
+            var forum = _context.Forums.Where(f => f.ID == id)
+                .Include(f => f.Posts).ThenInclude(p => p.User)
+                .Include(f => f.Posts).ThenInclude(p => p.Replies).ThenInclude(r => r.User)
+                .FirstOrDefault();
+
+            return forum;
         }
 
         public Task UpdateForumDescription(int forumId, string newDescription)
