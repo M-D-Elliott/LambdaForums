@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmashPopularity", "SmashPopularity\SmashPopularity.csproj", "{CD6F151F-9137-46FA-8016-1209602703D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmashPopularity.Data", "SmashPopularity.Data\SmashPopularity.Data.csproj", "{AC72CD7B-6A14-4096-8D42-E5178AAFC8DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmashPopularity.Data", "SmashPopularity.Data\SmashPopularity.Data.csproj", "{AC72CD7B-6A14-4096-8D42-E5178AAFC8DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmashPopularity.Service", "SmashPopularity.Service\SmashPopularity.Service.csproj", "{D88078C7-5791-4221-869C-6CEB7B66CC73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AC72CD7B-6A14-4096-8D42-E5178AAFC8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC72CD7B-6A14-4096-8D42-E5178AAFC8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC72CD7B-6A14-4096-8D42-E5178AAFC8DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88078C7-5791-4221-869C-6CEB7B66CC73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88078C7-5791-4221-869C-6CEB7B66CC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88078C7-5791-4221-869C-6CEB7B66CC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88078C7-5791-4221-869C-6CEB7B66CC73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
