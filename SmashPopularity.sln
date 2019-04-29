@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmashPopularity", "SmashPop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmashPopularity.Data", "SmashPopularity.Data\SmashPopularity.Data.csproj", "{AC72CD7B-6A14-4096-8D42-E5178AAFC8DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmashPopularity.Service", "SmashPopularity.Service\SmashPopularity.Service.csproj", "{D88078C7-5791-4221-869C-6CEB7B66CC73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmashPopularity.Service", "SmashPopularity.Service\SmashPopularity.Service.csproj", "{D88078C7-5791-4221-869C-6CEB7B66CC73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
