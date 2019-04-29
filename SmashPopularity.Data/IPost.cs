@@ -6,7 +6,7 @@ namespace SmashPopularity.Data
 {
     public interface IPost
     {
-        IPost GetByID(int id);
+        Post GetByID(int id);
         IEnumerable<Post> GetAll();
         IEnumerable<Post> GetFilteredPosts(string searchQuery);
         IEnumerable<Post> GetPostsByForum(int id);
@@ -16,6 +16,5 @@ namespace SmashPopularity.Data
         Task EditPostContent(int id, string newContent);
 
         Task AddReply(PostReply reply);
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using SmashPopularity.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SmashPopularity.Data;
 using SmashPopularity.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -42,9 +43,15 @@ namespace SmashPopularity.Service
             throw new NotImplementedException();
         }
 
-        public IPost GetByID(int id)
+        public Post GetByID(int id)
         {
-            throw new NotImplementedException();
+            var post = _context.Posts.Where(p => p.ID == id)
+                .Include(p => p.User)
+                .Include(p => p.Replies).ThenInclude(r => r.User)
+                .Include(p => p.Forum)
+                .FirstOrDefault();
+
+            return post;
         }
 
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
