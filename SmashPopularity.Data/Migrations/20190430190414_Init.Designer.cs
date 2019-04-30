@@ -11,7 +11,7 @@ using System;
 namespace SmashPopularity.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190425074957_Init")]
+    [Migration("20190430190414_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -144,9 +144,13 @@ namespace SmashPopularity.Data.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<bool>("IsActive");
+
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<DateTime>("MemberSince");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
@@ -159,6 +163,10 @@ namespace SmashPopularity.Data.Migrations
                     b.Property<string>("PhoneNumber");
 
                     b.Property<bool>("PhoneNumberConfirmed");
+
+                    b.Property<string>("ProfileImageUrl");
+
+                    b.Property<int>("Rating");
 
                     b.Property<string>("SecurityStamp");
 
