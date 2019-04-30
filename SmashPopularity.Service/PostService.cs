@@ -41,7 +41,10 @@ namespace SmashPopularity.Service
 
         public IEnumerable<Post> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Posts
+                .Include(p => p.User)
+                .Include(p => p.Replies).ThenInclude(r => r.User)
+                .Include(p => p.Forum);
         }
 
         public Post GetByID(int id)
@@ -58,6 +61,11 @@ namespace SmashPopularity.Service
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<Post> GetLatestPosts(int nPosts)
+        {
+            return GetAll().OrderByDescending(p => p.Created).Take(nPosts);
         }
 
         public IEnumerable<Post> GetPostsByForum(int id)
