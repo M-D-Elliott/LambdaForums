@@ -14,5 +14,7 @@ namespace SmashPopularity.Models.Post
         public int AuthorRating { get; set; }
         public string AuthorImageUrl { get; set; }
         public DateTime Created { get; set; }
+
+        public bool IsAuthorAdmin { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SmashPopularity.Models.Forum
+﻿using SmashPopularity.Models.Post;
+
+namespace SmashPopularity.Models.Forum
 {
     public class ForumListingModel
     {

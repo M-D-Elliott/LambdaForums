@@ -45,12 +45,12 @@ namespace SmashPopularity.Controllers
             {
                 ID = p.ID,
                 AuthorID = p.User.Id,
+                AuthorName = p.User.UserName,
                 AuthorRating = p.User.Rating,
                 Title = p.Title,
                 DatePosted = p.Created.ToString(),
                 RepliesCount = p.Replies.Count(),
                 Forum = BuildForumListing(p)
-
             });
 
             var model = new ForumTopicModel

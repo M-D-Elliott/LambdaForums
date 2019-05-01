@@ -42,6 +42,9 @@ namespace SmashPopularity.Controllers
                 Created = post.Created,
                 PostContent = post.Content,
                 Replies = replies,
+                ForumID = post.Forum.ID,
+                ForumName = post.Forum.Title,
+                IsAuthorAdmin = IsAuthorAdmin(post.User),
             };
 
             return View(model);
@@ -76,6 +79,12 @@ namespace SmashPopularity.Controllers
             return RedirectToAction("Index", "Post", new { id = post.ID });
         }
 
+        private bool IsAuthorAdmin(ApplicationUser user)
+        {
+            return _userManager.GetRolesAsync(user)
+                .Result.Contains("Admin");
+        }
+
         private Post BuildPost(NewPostModel model, ApplicationUser user)
         {
             var forum = _forumService.GetById(model.ForumID);
@@ -101,6 +110,7 @@ namespace SmashPopularity.Controllers
                 AuthorRating = reply.User.Rating,
                 Created = reply.Created,
                 ReplyContent = reply.Content,
+                IsAuthorAdmin = IsAuthorAdmin(reply.User),
             });
         }
     }
