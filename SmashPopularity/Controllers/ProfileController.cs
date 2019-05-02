@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SmashPopularity.Data;
 using SmashPopularity.Data.Models;
 
 namespace SmashPopularity.Controllers
@@ -26,7 +27,11 @@ namespace SmashPopularity.Controllers
 
         public IActionResult Detail(string id)
         {
-            return View();
+            var model = new ProfileModel()
+            {
+
+            };
+            return View(model);
         }
     }
 }
