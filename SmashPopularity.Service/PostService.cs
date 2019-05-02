@@ -67,6 +67,13 @@ namespace SmashPopularity.Service
                     || p.Content.Contains(searchQuery));
         }
 
+        public IEnumerable<Post> GetFilteredPosts(string searchQuery)
+        {
+            return GetAll().Where(p
+                => p.Title.Contains(searchQuery)
+                || p.Content.Contains(searchQuery));
+        }
+
         public IEnumerable<Post> GetLatestPosts(int nPosts)
         {
             return GetAll().OrderByDescending(p => p.Created).Take(nPosts);
