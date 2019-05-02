@@ -58,9 +58,13 @@ namespace SmashPopularity.Service
             return post;
         }
 
-        public IEnumerable<Post> GetFilteredPosts(string searchQuery)
+        public IEnumerable<Post> GetFilteredPosts(Forum forum, string searchQuery)
         {
-            throw new NotImplementedException();
+            return string.IsNullOrEmpty(searchQuery)
+                ? forum.Posts
+                : forum.Posts.Where(p 
+                    => p.Title.Contains(searchQuery) 
+                    || p.Content.Contains(searchQuery));
         }
 
         public IEnumerable<Post> GetLatestPosts(int nPosts)
