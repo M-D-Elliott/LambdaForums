@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SmashPopularity.Data;
 using SmashPopularity.Data.Models;
@@ -45,7 +42,7 @@ namespace SmashPopularity.Controllers
                 EmptySearchResults = areNoResults,
             };
 
-            return View();
+            return View(model);
         }
 
         private ForumListingModel BuildForumListing(Post post)
